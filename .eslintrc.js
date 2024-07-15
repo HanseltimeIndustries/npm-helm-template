@@ -9,9 +9,11 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['prettier'],
+  plugins: ['prettier', 'import'],
   rules: {
     'prettier/prettier': 'error',
+    // We just this since typescript won't compile esm to have .js extensions
+    'import/extensions': ['error', 'ignorePackages'],
   },
   ignorePatterns: ['.yarn/**/*', 'dist/**/*', 'node_modules/**/*'],
   overrides: [
